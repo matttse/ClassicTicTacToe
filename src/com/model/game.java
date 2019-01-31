@@ -1,7 +1,7 @@
 package com.model;
 
-import view.inputCapture;
-import view.board;
+import com.view.board;
+import com.view.inputCapture;
 
 public class game {
 
