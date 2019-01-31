@@ -1,31 +1,43 @@
 package com.model;
 
-import com.view.board;
-import com.view.inputCapture;
+import java.awt.Cursor;
 
 public class game {
 
-    public static game game;
-    public static int sizeField;
+    public static int step = 0;
 
-    public static void main(final  String[] args) {
+    private final player[] players;
+    private final field field;
+    private final String name;
+    private final cursor cursor;
+    
+    public Boolean isEnd;
 
-        final String name0 = inputCapture.inputPlayerNameWV("-X-");
-        final String name1 = inputCapture.inputPlayerNameWV("-O-");
+    public game(final player[] players, final field field, final String name, final cursor cursor) {
+        this.players = players;
+        this.field = field;
+        this.name = name;
+        this.cursor = cursor;
+        this.isEnd = true;
+    }
 
-        sizeField = inputCapture.inputSizeFieldWV();
+    public player[] getPlayers() {
+        return players;
+    }
 
-        final player[] players = new player[2];
-        players[0] = new player(name0, figure.X);
-        players[1] = new player(name1, figure.O);
+    public field getField() {
+        return field;
+    }
 
-        game = new game(players, new Field(sizeField), "XO", new Cursor(0,0));
+    public String getName() {
+        return name;
+    }
 
-        final WindowsView wv = new WindowsView();
-        
-        while (game.isEnd) {
-            wv.loop();
-            wv.repaint();
-        }
+    public cursor getCursor() {
+        return cursor;
+    }
+
+    public Boolean getEnd() {
+        return isEnd;
     }
 }
