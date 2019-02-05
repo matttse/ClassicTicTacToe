@@ -2,31 +2,31 @@ package com.model;
 
 import java.awt.Point;
 
-public class field {
+public class Field {
 
     public final static int MIN_COORDINATE = 0;
 
-    private final figure[][] field;
+    private final Figure[][] field;
 
     public final int fieldSize;
 
-    public field(int fieldSize) {
+    public Field(int fieldSize) {
         this.fieldSize = fieldSize;
-        field = new figure[fieldSize][fieldSize];
+        field = new Figure[fieldSize][fieldSize];
     }
 
     public int getSize() {
         return fieldSize;
     }
 
-    public figure getFigure(final Point point) {//throws InvalidPointException {
+    public Figure getFigure(final Point point) {//throws InvalidPointException {
 //            if (!checkPoint(point))
 //            throw new InvalidPointException();
 
         return  field[point.x][point.y];
     }
 
-    public void setFigure(final Point point, final figure figure) {//throws InvalidPointException {
+    public void setFigure(final Point point, final Figure figure) {//throws InvalidPointException {
 //        if (!checkPoint(point))
 //            throw new InvalidPointException();
 //        else

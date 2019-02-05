@@ -1,26 +1,26 @@
 package com.game;
 
-import com.view.board;
-import com.view.inputCapture;
+import com.view.Board;
+import com.view.InputCapture;
 import com.model.*;
 
-public class main {
+public class Main {
 
-    public static game game;
+    public static Game game;
     public static int sizeField;
 
     public static void main(final  String[] args) {
 
-        final String name0 = inputCapture.inputPlayerNameWV("-X-");
-        final String name1 = inputCapture.inputPlayerNameWV("-O-");
+        final String name0 = InputCapture.inputPlayerNameWV("-X-");
+        final String name1 = InputCapture.inputPlayerNameWV("-O-");
 
-        sizeField = inputCapture.inputSizeFieldWV();
+        sizeField = InputCapture.inputSizeFieldWV();
 
-        final player[] players = new player[2];
-        players[0] = new player(name0, figure.X);
-        players[1] = new player(name1, figure.O);
+        final Player[] players = new Player[2];
+        players[0] = new Player(name0, Figure.X);
+        players[1] = new Player(name1, Figure.O);
 
-        game = new game(players, new field(sizeField), "XO", new cursor(0,0));
+        game = new Game(players, new Field(sizeField), "XO", new Cursor(0,0));
 
 //        final WindowsView wv = new WindowsView();
         

@@ -1,12 +1,12 @@
 package com.model;
 
 
-public class player {
+public class Player {
     private final String name;
-    private final figure figure;
+    private final Figure figure;
     private int score;
 
-    public  player (final String name, final figure figure) {
+    public  Player (final String name, final Figure figure) {
         this.figure = figure;
         this.name = name;
         this.score = 0;
@@ -16,7 +16,7 @@ public class player {
         return name;
     }
 
-    public figure getFigure() {
+    public Figure getFigure() {
         return figure;
     }
 

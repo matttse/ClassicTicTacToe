@@ -3,16 +3,17 @@ package com.model;
 
 import javax.swing.ImageIcon;
 
-import com.game.main;
+import com.game.Main;
 import java.awt.*;
+import javax.swing.*;
 
-public class cursor {
-    public final Image kursor = new ImageIcon("res/kursor.png").getImage();
+public class Cursor {
+    public final Image cursor = new ImageIcon("res/kursor.png").getImage();
 
     public int X;
     public int Y;
 
-    public cursor(int x, int y) {
+    public Cursor(int x, int y) {
         this.X = x;
         this.Y = y;
     }
@@ -27,19 +28,19 @@ public class cursor {
 
     public void setX(int x) {
         X += x;
-        if(X < 0 || X > main.game.getField().getSize()-1) {
+        if(X < 0 || X > Main.game.getField().getSize()-1) {
             X -= x;
         }
     }
 
     public void setY(int y) {
         Y += y;
-        if(Y < 0 || Y > main.game.getField().getSize()-1) {
+        if(Y < 0 || Y > Main.game.getField().getSize()-1) {
             Y -= y;
         }
     }
 
-    public Image getImageKursor() {
-        return kursor;
+    public Image getImageCursor() {
+        return cursor;
     }
 }

@@ -1,5 +1,5 @@
 package com.model;
 
-public enum figure {	
+public enum Figure {	
 	    X,O,N	
 }

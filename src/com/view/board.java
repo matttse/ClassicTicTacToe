@@ -1,5 +1,5 @@
 package com.view;
 
-public class board {
+public class Board {
 
 }

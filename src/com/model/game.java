@@ -1,19 +1,17 @@
 package com.model;
 
-import java.awt.Cursor;
-
-public class game {
+public class Game {
 
     public static int step = 0;
 
-    private final player[] players;
-    private final field field;
+    private final Player[] players;
+    private final Field field;
     private final String name;
-    private final cursor cursor;
+    private final Cursor cursor;
     
     public Boolean isEnd;
 
-    public game(final player[] players, final field field, final String name, final cursor cursor) {
+    public Game(final Player[] players, final Field field, final String name, final Cursor cursor) {
         this.players = players;
         this.field = field;
         this.name = name;
@@ -21,11 +19,11 @@ public class game {
         this.isEnd = true;
     }
 
-    public player[] getPlayers() {
+    public Player[] getPlayers() {
         return players;
     }
 
-    public field getField() {
+    public Field getField() {
         return field;
     }
 
@@ -33,7 +31,7 @@ public class game {
         return name;
     }
 
-    public cursor getCursor() {
+    public Cursor getCursor() {
         return cursor;
     }
 

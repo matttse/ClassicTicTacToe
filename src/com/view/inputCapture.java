@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 import javax.swing.JOptionPane;
 
-public class inputCapture {
+public class InputCapture {
     private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public static String inputPlayerName() {
