@@ -1,14 +1,15 @@
-package com.model;
+package model;
 
 
 import javax.swing.ImageIcon;
 
-import com.game.Main;
+import mainGame.Main;
+
 import java.awt.*;
 import javax.swing.*;
 
 public class Cursor {
-    public final Image cursor = new ImageIcon("com/view/res/selectorSquare.png").getImage();
+    public final Image cursor = new ImageIcon("src/resources/selectorSquare.png").getImage();
 
     public int X;
     public int Y;

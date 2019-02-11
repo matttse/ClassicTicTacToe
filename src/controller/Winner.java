@@ -1,9 +1,9 @@
-package com.controller;
+package controller;
 
 import java.awt.*;
 
-import com.game.Main;
-import com.model.*;
+import mainGame.Main;
+import model.*;
 
 public class Winner {
 

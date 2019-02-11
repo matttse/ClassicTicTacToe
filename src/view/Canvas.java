@@ -1,20 +1,18 @@
-package com.view;
+package view;
 
-import com.game.Main;
-import com.model.Field;
-import com.model.Figure;
-import com.model.InvalidPointException;
-
+import controller.*;
+import mainGame.Main;
+import model.*;
 import javax.swing.*;
 import java.awt.*;
 
-public class Board extends JPanel {
-    public final Field field = Main.game.getField();
+public class Canvas extends JPanel {
 
-    private final Image xImage = new ImageIcon("com/view/res/xImage.png").getImage();
-    private final Image oImage = new ImageIcon("com/view/res/oImage.png").getImage();
-//    private final Image nuller = new ImageIcon("res/nuller.png").getImage();
-    private final Image selectorSquare = new ImageIcon("res/selectorSquare.png").getImage();
+    public final Field field = Main.game.getField();
+    private final Image xImage = new ImageIcon("src/resources/xImage.png").getImage();
+    private final Image oImage = new ImageIcon("src/resources/oImage.png").getImage();
+    private final Image nuller = new ImageIcon("src/resources/nuller.png").getImage();
+    private final Image selectorSquare = new ImageIcon("src/resources/selectorSquare.png").getImage();
 
     private final int countLine = Main.sizeField - 1;
     private int  widthLine = 50 / countLine;
@@ -25,7 +23,7 @@ public class Board extends JPanel {
         super.paintComponent(g2);
         g2.setColor(Color.BLACK);
         paintLine(g2);
-//        paintFigure(g2);
+        paintFigure(g2);
         paintCursor(g2);
     }
 
@@ -42,7 +40,7 @@ public class Board extends JPanel {
         }
     }
 
-    public void paintFigure(Graphics2D g2) throws InvalidPointException {
+    public void paintFigure(Graphics2D g2) {
         int xFigure;
         int yFigure;
         int widthFigure;
@@ -50,19 +48,26 @@ public class Board extends JPanel {
         for(int x = 0; x < field.getSize(); x++) {
             for (int y = 0; y < field.getSize(); y++) {
                 Figure figure;
-                figure = field.getFigure(new Point(y, x));
+                try {
+                    figure = field.getFigure(new Point(y, x));
+                } catch (final InvalidPointException e) {
+                    e.printStackTrace();
+                    throw new RuntimeException(e);
+                }
                 xFigure = x*space+widthLine*(x+1);
                 yFigure = y*space+widthLine*(y+1);
                 widthFigure =  ((space-widthLine*2));
                 if (figure == Figure.X) {
+//                    g2.drawImage(krestick, xFigure, yFigure, widthFigure, widthFigure, null);
                     g2.drawImage(xImage, xFigure, yFigure, widthFigure, widthFigure, null);
                 }
                 if (figure == Figure.O) {
-                    g2.drawImage(oImage, xFigure, yFigure, widthFigure, widthFigure, null);
+//                    g2.drawImage(nolick, xFigure, yFigure, widthFigure, widthFigure, null);
+                	g2.drawImage(oImage, xFigure, yFigure, widthFigure, widthFigure, null);
                 }
-//                if (figure == Figure.N) {
-//                    g2.drawImage(nuller, xFigure, yFigure, widthFigure, widthFigure, null);
-//                }
+                if (figure == Figure.N) {
+                    g2.drawImage(nuller, xFigure, yFigure, widthFigure, widthFigure, null);
+                }
             }
         }
     }
@@ -73,6 +78,7 @@ public class Board extends JPanel {
         x = x * space + widthLine * x;
         y = y * space + widthLine * y;
         int widthCursor = space;
+//        g2.drawImage(kursor, x, y, widthCursor,  widthCursor,  null);
         g2.drawImage(selectorSquare, x, y, widthCursor,  widthCursor,  null);
     }
 }

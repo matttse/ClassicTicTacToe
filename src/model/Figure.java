@@ -1,4 +1,4 @@
-package com.model;
+package model;
 
 public enum Figure {	
 	    X,O,N	

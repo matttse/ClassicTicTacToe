@@ -1,10 +1,10 @@
-package com.controller;
-
-import com.model.Field;
-import com.model.Figure;
-import com.model.InvalidPointException;
+package controller;
 
 import java.awt.*;
+
+import model.Field;
+import model.Figure;
+import model.InvalidPointException;
 public class CurrentMove {
 	
     public Figure currentMove(final Field field) {

@@ -1,8 +1,9 @@
-package com.model;
+package model;
 
 import java.awt.*;
-import com.model.InvalidPointException;
-import com.model.ExistingPointException;
+
+import model.ExistingPointException;
+import model.InvalidPointException;
 
 public class Field {
 

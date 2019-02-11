@@ -1,7 +1,7 @@
-package com.controller;
-import com.model.*;
-
+package controller;
 import java.awt.*;
+
+import model.*;
 
 public class Move {
     public void applyFigure(final Field field, final Point point, final Figure figure) throws InvalidPointException, ExistingPointException {

@@ -1,17 +1,18 @@
-package com.controller;
-
-import com.model.Cursor;
-import com.model.ExistingPointException;
-import com.model.Field;
-import com.model.Figure;
-import com.model.InvalidPointException;
+package controller;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.*;
-import java.awt.*;
 
-import static com.game.Main.game;
+import model.Cursor;
+import model.ExistingPointException;
+import model.Field;
+import model.Figure;
+import model.InvalidPointException;
+
+import static mainGame.Main.game;
+
+import java.awt.*;
 
 
 public class KeyboardInput extends KeyAdapter {

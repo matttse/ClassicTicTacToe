@@ -1,9 +1,10 @@
-package com.game;
+package mainGame;
 
 
-import com.view.Window;
-import com.view.InputCapture;
-import com.model.*;
+import model.*;
+import view.InputCapture;
+import view.Window;
+import view.outputView;
 
 public class Main {
 
@@ -29,5 +30,7 @@ public class Main {
             wv.loop();
             wv.repaint();
         }
+
+        
     }
 }

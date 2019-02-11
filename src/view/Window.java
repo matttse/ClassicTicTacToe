@@ -1,8 +1,9 @@
-package com.view;
+package view;
 
-import com.game.Main;
-import com.controller.*;
-import com.model.*;
+import controller.*;
+import mainGame.Main;
+import model.*;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,10 +12,9 @@ public class Window extends JFrame {
     private final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     private final Dimension windowSize = new Dimension(500, 550);
 
-//    private Image icon = new ImageIcon("res/icon.png").getImage();
     private JPanel control = new JPanel();
     private JLabel turn = new JLabel();
-    private Font font = new Font("Obelixpro", Font.BOLD, 25);
+    private Font font = new Font("SANS_SERIF", Font.BOLD, 25);
     private Canvas canvas = new Canvas();
 
     private CurrentMove currentMoveController = new CurrentMove();
@@ -22,13 +22,12 @@ public class Window extends JFrame {
     private Move moveController = new Move();
     private Player[] players = Main.game.getPlayers();
 
-    private int hueta = 21;
+    private int heightAdjust = 21;
 
     public Window() {
         setLocation((int) (screenSize.getWidth()/2-windowSize.getWidth()/2), (int) (screenSize.getHeight()/2-windowSize.getHeight()/2));
         setTitle("XO");
-        setSize(windowSize.width, windowSize.height + hueta);
-//        setIconImage(icon);
+        setSize(windowSize.width, windowSize.height + heightAdjust);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setResizable(false);
@@ -56,7 +55,7 @@ public class Window extends JFrame {
             if (winner != null) {
                 JOptionPane.showMessageDialog(null, "Winner is - " + winner.getName());
             } else {
-                JOptionPane.showMessageDialog(null, "NO WINNER =(");
+                JOptionPane.showMessageDialog(null, "The Game is a Draw!");
             }
             Main.game.isEnd = false;
             System.exit(1);
