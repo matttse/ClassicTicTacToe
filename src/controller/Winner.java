@@ -19,68 +19,103 @@ public class Winner {
         return winner;
     }
 
-    public void searchTriple(final Point point, Figure figure, final Field field) throws InvalidPointException {
+    public void searchTriple(final Point point, Figure figure, final Field field) {
         int score = 0;
         int x = point.x;
         int y = point.y;
 
         for (int i = 0; i <= 4; i+=3) {
 
-            if (figure == field.getFigure(new Point(x, y - 1)) &&
-			        figure == field.getFigure(new Point(x, y - 2 + i))) {
-			    score++;
-			    setNullfigure(new Point(x, y - 1), field);
-			    setNullfigure(new Point(x, y - 2 + i), field);
-			}
+            try {
+                if (figure == field.getFigure(new Point(x, y - 1)) &&
+                        figure == field.getFigure(new Point(x, y - 2 + i))) {
+                    score++;
+                    setNullfigure(new Point(x, y - 1), field);
+                    setNullfigure(new Point(x, y - 2 + i), field);
+                }
+            } catch (InvalidPointException e) {
+                //TODO
+            }
 
-            if (figure == field.getFigure(new Point(x + 1, y - 1)) &&
-			        figure == field.getFigure(new Point(x + 2 - i, y - 2 + i))) {
-			    score++;
-			    setNullfigure(new Point(x + 1, y - 1), field);
-			    setNullfigure(new Point(x + 2 - i, y - 2 + i), field);
-			}
+            try {
+                if (figure == field.getFigure(new Point(x + 1, y - 1)) &&
+                        figure == field.getFigure(new Point(x + 2 - i, y - 2 + i))) {
+                    score++;
+                    setNullfigure(new Point(x + 1, y - 1), field);
+                    setNullfigure(new Point(x + 2 - i, y - 2 + i), field);
+                }
+            } catch (InvalidPointException e) {
+                //TODO
+            }
 
-            if (figure == field.getFigure(new Point(x + 1, y)) &&
-			        figure == field.getFigure(new Point(x + 2 - i, y))) {
-			    score++;
-			    setNullfigure(new Point(x + 1, y), field);
-			    setNullfigure(new Point(x + 2 - i, y), field);
-			}
+            try {
+                if (figure == field.getFigure(new Point(x + 1, y)) &&
+                        figure == field.getFigure(new Point(x + 2 - i, y))) {
+                    score++;
+                    setNullfigure(new Point(x + 1, y), field);
+                    setNullfigure(new Point(x + 2 - i, y), field);
+                }
+            } catch (InvalidPointException e) {
+                //TODO
+            }
 
-            if (figure == field.getFigure(new Point(x + 1, y + 1)) &&
-			        figure == field.getFigure(new Point(x + 2 - i, y + 2 - i))) {
-			    score++;
-			    setNullfigure(new Point(x + 1, y + 1), field);
-			    setNullfigure(new Point(x + 2 - i, y + 2 - i), field);
-			}
+            try {
+                if (figure == field.getFigure(new Point(x + 1, y + 1)) &&
+                        figure == field.getFigure(new Point(x + 2 - i, y + 2 - i))) {
+                    score++;
+                    setNullfigure(new Point(x + 1, y + 1), field);
+                    setNullfigure(new Point(x + 2 - i, y + 2 - i), field);
+                }
+            } catch (InvalidPointException e) {
+                //TODO
+            }
 
-            if (figure == field.getFigure(new Point(x, y + 1)) &&
-			        figure == field.getFigure(new Point(x, y + 2 - i))) {
-			    score++;
-			    setNullfigure(new Point(x, y + 1), field);
-			    setNullfigure(new Point(x, y + 2 - i), field);
-			}
+            try {
 
-            if (figure == field.getFigure(new Point(x - 1, y + 1)) &&
-			        figure == field.getFigure(new Point(x - 2 + i, y + 2 - i))) {
-			    score++;
-			    setNullfigure(new Point(x - 1, y + 1), field);
-			    setNullfigure(new Point(x - 2 + i, y + 2 - i), field);
-			}
+                if (figure == field.getFigure(new Point(x, y + 1)) &&
+                        figure == field.getFigure(new Point(x, y + 2 - i))) {
+                    score++;
+                    setNullfigure(new Point(x, y + 1), field);
+                    setNullfigure(new Point(x, y + 2 - i), field);
+                }
+            } catch (InvalidPointException e) {
+                //TODO
+            }
 
-            if (figure == field.getFigure(new Point(x - 1, y)) &&
-			        figure == field.getFigure(new Point(x - 2 + i, y))) {
-			    score++;
-			    setNullfigure(new Point(x - 1, y), field);
-			    setNullfigure(new Point(x - 2 + i, y), field);
-			}
+            try {
 
-            if (figure == field.getFigure(new Point(x - 1, y - 1)) &&
-			        figure == field.getFigure(new Point(x - 2 + i, y - 2 + i))) {
-			    score++;
-			    setNullfigure(new Point(x - 1, y - 1), field);
-			    setNullfigure(new Point(x - 2 + i, y - 2 + i), field);
-			}
+                if (figure == field.getFigure(new Point(x - 1, y + 1)) &&
+                        figure == field.getFigure(new Point(x - 2 + i, y + 2 - i))) {
+                    score++;
+                    setNullfigure(new Point(x - 1, y + 1), field);
+                    setNullfigure(new Point(x - 2 + i, y + 2 - i), field);
+                }
+            } catch (InvalidPointException e) {
+                //TODO
+            }
+
+            try {
+
+                if (figure == field.getFigure(new Point(x - 1, y)) &&
+                        figure == field.getFigure(new Point(x - 2 + i, y))) {
+                    score++;
+                    setNullfigure(new Point(x - 1, y), field);
+                    setNullfigure(new Point(x - 2 + i, y), field);
+                }
+            } catch (InvalidPointException e) {
+                //TODO
+            }
+
+            try {
+                if (figure == field.getFigure(new Point(x - 1, y - 1)) &&
+                        figure == field.getFigure(new Point(x - 2 + i, y - 2 + i))) {
+                    score++;
+                    setNullfigure(new Point(x - 1, y - 1), field);
+                    setNullfigure(new Point(x - 2 + i, y - 2 + i), field);
+                }
+            } catch (InvalidPointException e) {
+                //TODO
+            }
         }
 
         if (score != 0) {
