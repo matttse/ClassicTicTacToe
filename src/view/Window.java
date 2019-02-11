@@ -26,7 +26,7 @@ public class Window extends JFrame {
 
     public Window() {
         setLocation((int) (screenSize.getWidth()/2-windowSize.getWidth()/2), (int) (screenSize.getHeight()/2-windowSize.getHeight()/2));
-        setTitle("XO");
+        setTitle("Classic Tic Tac Toe");
         setSize(windowSize.width, windowSize.height + heightAdjust);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
@@ -35,7 +35,7 @@ public class Window extends JFrame {
         addKeyListener(new KeyboardInput());
 
         turn.setFont(font);
-        turn.setText("Hello");
+        turn.setText("Turn");
 
         control.setBackground(Color.GRAY);
         control.add(turn);

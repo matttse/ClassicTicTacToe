@@ -58,11 +58,9 @@ public class Canvas extends JPanel {
                 yFigure = y*space+widthLine*(y+1);
                 widthFigure =  ((space-widthLine*2));
                 if (figure == Figure.X) {
-//                    g2.drawImage(krestick, xFigure, yFigure, widthFigure, widthFigure, null);
                     g2.drawImage(xImage, xFigure, yFigure, widthFigure, widthFigure, null);
                 }
                 if (figure == Figure.O) {
-//                    g2.drawImage(nolick, xFigure, yFigure, widthFigure, widthFigure, null);
                 	g2.drawImage(oImage, xFigure, yFigure, widthFigure, widthFigure, null);
                 }
                 if (figure == Figure.N) {
@@ -78,7 +76,6 @@ public class Canvas extends JPanel {
         x = x * space + widthLine * x;
         y = y * space + widthLine * y;
         int widthCursor = space;
-//        g2.drawImage(kursor, x, y, widthCursor,  widthCursor,  null);
         g2.drawImage(selectorSquare, x, y, widthCursor,  widthCursor,  null);
     }
 }
