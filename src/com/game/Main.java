@@ -1,6 +1,7 @@
 package com.game;
 
-import com.view.Board;
+
+import com.view.Window;
 import com.view.InputCapture;
 import com.model.*;
 
@@ -22,11 +23,11 @@ public class Main {
 
         game = new Game(players, new Field(sizeField), "XO", new Cursor(0,0));
 
-//        final WindowsView wv = new WindowsView();
+        final Window wv = new Window();
         
-//        while (game.isEnd) {
-//            wv.loop();
-//            wv.repaint();
-//        }
+        while (game.isEnd) {
+            wv.loop();
+            wv.repaint();
+        }
     }
 }

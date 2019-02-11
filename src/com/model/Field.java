@@ -1,6 +1,8 @@
 package com.model;
 
-import java.awt.Point;
+import java.awt.*;
+import com.model.InvalidPointException;
+import com.model.ExistingPointException;
 
 public class Field {
 
@@ -19,17 +21,17 @@ public class Field {
         return fieldSize;
     }
 
-    public Figure getFigure(final Point point) {//throws InvalidPointException {
-//            if (!checkPoint(point))
-//            throw new InvalidPointException();
+    public Figure getFigure(final Point point) throws InvalidPointException {
+            if (!checkPoint(point))
+            throw new InvalidPointException();
 
         return  field[point.x][point.y];
     }
 
-    public void setFigure(final Point point, final Figure figure) {//throws InvalidPointException {
-//        if (!checkPoint(point))
-//            throw new InvalidPointException();
-//        else
+    public void setFigure(final Point point, final Figure figure) throws InvalidPointException {
+        if (!checkPoint(point))
+            throw new InvalidPointException();
+        else
             field[point.x][point.y] = figure;
     }
 

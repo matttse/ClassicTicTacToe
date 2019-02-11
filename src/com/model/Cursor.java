@@ -8,7 +8,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Cursor {
-    public final Image cursor = new ImageIcon("res/kursor.png").getImage();
+    public final Image cursor = new ImageIcon("com/view/res/selectorSquare.png").getImage();
 
     public int X;
     public int Y;

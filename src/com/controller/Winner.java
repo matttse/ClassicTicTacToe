@@ -103,9 +103,9 @@ public class Winner {
             field.setFigure(point, null);
             new Move().applyFigure(field, point, Figure.N);
         } catch (InvalidPointException e) {
-            //LOL
+            //TODO
         } catch (ExistingPointException e) {
-            //LOL
+            //TODO
         }
     }
 }
